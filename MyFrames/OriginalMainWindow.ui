@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>597</width>
+    <height>403</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>简易绘图系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <layout class="QGridLayout" name="drawGridLayout"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="button_clear">
+      <property name="text">
+       <string>清空画板</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="button_exit">
+      <property name="text">
+       <string>退出</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>597</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="POINT_MENU">
+    <property name="title">
+     <string>点状符号</string>
+    </property>
+    <addaction name="point_sanjiao"/>
+    <addaction name="point_tianwendian"/>
+    <addaction name="point_yancong"/>
+    <addaction name="point_chuyouguan"/>
+    <addaction name="point_guta"/>
+    <addaction name="point_fadian"/>
+   </widget>
+   <widget class="QMenu" name="LINE_MENU">
+    <property name="title">
+     <string>线状符号</string>
+    </property>
+    <addaction name="line_highway"/>
+    <addaction name="line_buildinghighway"/>
+    <addaction name="line_buildingprovincialroad"/>
+    <addaction name="line_xianroad"/>
+    <addaction name="line_airplane"/>
+    <addaction name="line_milestone"/>
+   </widget>
+   <widget class="QMenu" name="POLYGON_MENU">
+    <property name="title">
+     <string>面</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="FILE_MENU">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="FILE_NEW"/>
+    <addaction name="FILE_OPEN"/>
+    <addaction name="FILE_SAVE"/>
+    <addaction name="FILE_SAVE_AS"/>
+    <addaction name="separator"/>
+    <addaction name="FILE_MRU_FILE10"/>
+    <addaction name="separator"/>
+    <addaction name="APP_EXIT"/>
+   </widget>
+   <addaction name="FILE_MENU"/>
+   <addaction name="POINT_MENU"/>
+   <addaction name="LINE_MENU"/>
+   <addaction name="POLYGON_MENU"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="line_buildinghighway"/>
+   <addaction name="line_highway"/>
+   <addaction name="Node_Edit"/>
+   <addaction name="Item_Move"/>
+  </widget>
+  <action name="FILE_NEW">
+   <property name="text">
+    <string>新建</string>
+   </property>
+  </action>
+  <action name="FILE_OPEN">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="FILE_SAVE">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="FILE_SAVE_AS">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="FILE_MRU_FILE10">
+   <property name="text">
+    <string>最近的文件</string>
+   </property>
+  </action>
+  <action name="point_sanjiao">
+   <property name="text">
+    <string>三角点</string>
+   </property>
+   <property name="toolTip">
+    <string>三角点</string>
+   </property>
+  </action>
+  <action name="APP_EXIT">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="line_buildinghighway">
+   <property name="text">
+    <string>建筑中的高速公路</string>
+   </property>
+  </action>
+  <action name="line_highway">
+   <property name="text">
+    <string>高速公路</string>
+   </property>
+  </action>
+  <action name="Node_Edit">
+   <property name="text">
+    <string>节点编辑</string>
+   </property>
+  </action>
+  <action name="Item_Move">
+   <property name="text">
+    <string>移动</string>
+   </property>
+  </action>
+  <action name="line_buildingprovincialroad">
+   <property name="text">
+    <string>建筑中的省干线公路</string>
+   </property>
+  </action>
+  <action name="line_xianroad">
+   <property name="text">
+    <string>县乡公路</string>
+   </property>
+  </action>
+  <action name="line_airplane">
+   <property name="text">
+    <string>能起降飞机的公路段</string>
+   </property>
+  </action>
+  <action name="line_milestone">
+   <property name="text">
+    <string>公路里程起止符号</string>
+   </property>
+  </action>
+  <action name="point_chuyouguan">
+   <property name="text">
+    <string>储油罐</string>
+   </property>
+  </action>
+  <action name="point_guta">
+   <property name="text">
+    <string>古塔</string>
+   </property>
+  </action>
+  <action name="point_fadian">
+   <property name="text">
+    <string>发电厂</string>
+   </property>
+  </action>
+  <action name="point_tianwendian">
+   <property name="text">
+    <string>独立天文点</string>
+   </property>
+  </action>
+  <action name="point_yancong">
+   <property name="text">
+    <string>烟囱</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
