@@ -36,7 +36,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.drawGridLayout.addWidget(self.__GeoItemView)
         self.__GeoItemView.show()
         # 界面按钮链接函数
-        # self.button_clear.clicked.connect(self.__GeoItemView.clear)
+        self.button_clear.clicked.connect(self.__GeoItemView.clear)
         self.button_exit.clicked.connect(QCoreApplication.instance().quit)
         # 菜单按钮链接函数
         self.point_sanjiao.triggered.connect(self.__GeoItemView.on_draw_sanjiaodian)

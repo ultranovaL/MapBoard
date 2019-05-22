@@ -3,7 +3,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from GeoObject.Lines.PathItem import PathItem
 from math import *
-from GeoObject.Adjunct.Plane import Plane
 
 
 class PlaneRoadItem(PathItem):
@@ -80,7 +79,6 @@ class PlaneRoadItem(PathItem):
 
     def draw_sideline(self, painter: QPainter):
         x, y = self.cal_plane_coord()
-        # 图标外圆圈
         painter.setPen(QPen(Qt.black, 1))
         painter.setBrush(Qt.white)
         path = QPainterPath()

@@ -31,7 +31,7 @@ class PathItem(QGraphicsPathItem):
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget):
         pen1, pen2, pen3 = self.define_pen()
         painter.setRenderHint(QPainter.Antialiasing, True)
-        self.draw_line(painter, pen3, pen2, pen1)
+        self.draw_line(painter, pen2, pen1)
 
     def draw_line(self, painter, *pens):
         # 按照画笔传入顺序绘制，先绘制的在底层，后面依次叠甲覆盖
@@ -54,9 +54,6 @@ class PathItem(QGraphicsPathItem):
             y = self.path.elementAt(i).y
             new_line.append(QPointF(x, y))
         self.line = new_line.copy()
-
-    def setLine(self, line):
-        self.line = line.copy()
 
     def get_path(self):
         return self.path

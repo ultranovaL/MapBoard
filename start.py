@@ -1,7 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
 from MyFrames.MainFrame import MainWindow
-from MyFrames.GeoItemView import GeoItemView
 
 
 def start():

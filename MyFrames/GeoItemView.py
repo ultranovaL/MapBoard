@@ -3,21 +3,19 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from GeoObject.Type import OperationType, PointType, LineType
 # 点状符号
-from GeoObject.Points.SanJiaoDian import SanJiaoDian
-from GeoObject.Points.TianWenDian import TianWenDian
-from GeoObject.Points.GuTa import Guta
-from GeoObject.Points.ChuYouGuan import ChuYouGuan
-from GeoObject.Points.YanCong import YanCong
-from GeoObject.Points.FaDianChang import FaDianChang
+from GeoObject.Points.三角点 import SanJiaoDian
+from GeoObject.Points.独立天文点 import TianWenDian
+from GeoObject.Points.古塔 import Guta
+from GeoObject.Points.储油罐 import ChuYouGuan
+from GeoObject.Points.烟囱 import YanCong
+from GeoObject.Points.发电厂 import FaDianChang
 # 线状符号
-from GeoObject.Lines.HighWayItem import HighWayItem
-from GeoObject.Lines.BuildingProvincialRoadItem import BuildingProvincialRoadItem
-from GeoObject.Lines.BuildingHighWayItem import BuildingHighWayItem
-from GeoObject.Lines.XianRoadItem import XianRoadItem
-from GeoObject.Lines.PlaneRoadItem import PlaneRoadItem
-from GeoObject.Lines.MileageRoadItem import MileageRoadItem
-# 附属符号
-from GeoObject.Adjunct.Plane import Plane
+from GeoObject.Lines.高速公路 import HighWayItem
+from GeoObject.Lines.建设中的省干线公路 import BuildingProvincialRoadItem
+from GeoObject.Lines.建设中的高速公路 import BuildingHighWayItem
+from GeoObject.Lines.县级公路 import XianRoadItem
+from GeoObject.Lines.能起降分级的公路路段 import PlaneRoadItem
+from GeoObject.Lines.公路里程起止点 import MileageRoadItem
 
 
 class GeoItemView(QGraphicsView):
@@ -210,7 +208,6 @@ class GeoItemView(QGraphicsView):
                 cur_edit_line.setPath(tmp_path)
                 # cur_edit_line.setLine(cur_points)
 
-
             temp_shapes = self.shapes.copy()
             for point in self.points:  # 移动中画节点
                 if self.points.index(point) == self.editPointIndex:
@@ -252,6 +249,11 @@ class GeoItemView(QGraphicsView):
     '''
        画板处理/辅助函数
     '''
+
+    def clear(self):
+        while len(self.my_scene.items()) > 0:
+            self.my_scene.removeItem(self.my_scene.items()[0])
+        self.shapes.clear()
 
     def show_item(self, *point):  # 将item临时展现在屏幕上
         if self.isLine:

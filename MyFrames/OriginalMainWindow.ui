@@ -72,11 +72,6 @@
     <addaction name="line_airplane"/>
     <addaction name="line_milestone"/>
    </widget>
-   <widget class="QMenu" name="POLYGON_MENU">
-    <property name="title">
-     <string>面</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="FILE_MENU">
     <property name="title">
      <string>文件</string>
@@ -93,7 +88,6 @@
    <addaction name="FILE_MENU"/>
    <addaction name="POINT_MENU"/>
    <addaction name="LINE_MENU"/>
-   <addaction name="POLYGON_MENU"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -105,8 +99,16 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="line_buildinghighway"/>
-   <addaction name="line_highway"/>
+   <addaction name="point_sanjiao"/>
+   <addaction name="point_tianwendian"/>
+   <addaction name="point_yancong"/>
+   <addaction name="point_chuyouguan"/>
+   <addaction name="point_guta"/>
+   <addaction name="point_fadian"/>
+   <addaction name="separator"/>
+   <addaction name="line_airplane"/>
+   <addaction name="line_milestone"/>
+   <addaction name="separator"/>
    <addaction name="Node_Edit"/>
    <addaction name="Item_Move"/>
   </widget>
@@ -136,11 +138,18 @@
    </property>
   </action>
   <action name="point_sanjiao">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/三角点.bmp</normaloff>icons/三角点.bmp</iconset>
+   </property>
    <property name="text">
     <string>三角点</string>
    </property>
    <property name="toolTip">
     <string>三角点</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
    </property>
   </action>
   <action name="APP_EXIT">

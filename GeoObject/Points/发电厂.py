@@ -11,18 +11,20 @@ class FaDianChang(PointItem):
         self.rad = pi / 180
         self.size = 150
         self.len_arrow = self.size / 5
+        self.line_width = self.size / 15
 
     def boundingRect(self):
-        return QRectF(self.x - self.size / 2, self.y - self.size / 2, self.size, self.size)
+        return QRectF(self.x - self.size / 2 - self.line_width, self.y - self.size / 2 - self.line_width,
+                      self.size + 2 * self.line_width, self.size + 2 * self.line_width)
 
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget):
         path = QPainterPath()
         painter.setRenderHint(QPainter.Antialiasing, True)
-        painter.setPen(QPen(Qt.black, 1))
+        painter.setPen(QPen(Qt.black, self.line_width))
         painter.setBrush(QBrush(Qt.black))
         painter.drawRect(self.x - 0.2 * self.size, self.y - 0.2 * self.size, 0.4 * self.size, 0.4 * self.size)
 
-        painter.setPen(QPen(Qt.black, 1))
+        painter.setPen(QPen(Qt.black, self.line_width))
         painter.setBrush(QBrush())
         for i in range(0, 4):
             x0, y0 = self.x, self.y

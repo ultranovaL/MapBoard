@@ -9,6 +9,7 @@ class TianWenDian(PointItem):
     def __init__(self, x, y):
         super(TianWenDian, self).__init__(x, y)
         self.size = 200
+        self.line_width = self.size / 20
         self.R = self.size / 2
         self.rad = pi / 180
         self.r = self.R * sin(18 * self.rad) / cos(36 * self.rad)
@@ -21,7 +22,7 @@ class TianWenDian(PointItem):
         path = QPainterPath()
         painter.setRenderHint(QPainter.Antialiasing, True)
         # 绘制中心圆点
-        painter.setPen(QPen(Qt.black, 1))
+        painter.setPen(QPen(Qt.black, self.line_width))
         painter.setBrush(QBrush(Qt.black))
         circle_coefficients = self.cal_circle(self.x, self.y, 1.5 * self.size / 20)
         painter.drawEllipse(circle_coefficients[0], circle_coefficients[1], circle_coefficients[2],
@@ -37,7 +38,7 @@ class TianWenDian(PointItem):
             )
             self.coord.append((x1, y1))
             self.coord.append((x2, y2))
-        painter.setPen(QPen(Qt.black, 1))
+        painter.setPen(QPen(Qt.black, self.line_width))
         painter.setBrush(QBrush())
         for point in self.coord:
             if self.coord.index(point) == 0:
@@ -46,3 +47,10 @@ class TianWenDian(PointItem):
                 path.lineTo(*point)
         path.lineTo(*self.coord[0])
         painter.drawPath(path)
+
+    def cal_circle(self, x, y, r):
+        x1 = x - r
+        y1 = y - r
+        w = 2 * r
+        h = 2 * r
+        return [x1, y1, w, h]

@@ -16,9 +16,4 @@ class PointItem(QGraphicsItem):
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget):
         pass
 
-    def cal_circle(self, x, y, r):
-        x1 = x - r
-        y1 = y - r
-        w = 2 * r
-        h = 2 * r
-        return [x1, y1, w, h]
+
